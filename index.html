@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Flappy Bird</title>
+</head>
+<style>
+     .input_video{
+        display: none;
+    }
+    .main{
+        position: relative;
+    }
+    .container{
+        position: absolute;
+    }
+    .output_canvas{
+        display: block;
+    }
+    .A1{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        padding: 20px;
+    }
+    .div-button{
+        margin: auto;
+    }
+    .button{
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 20px;
+    }
+    button:hover{
+        background-color: rgb(195, 235, 195);
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="container">
+            <video class="input_video"></video>
+            <canvas class="output_canvas" ></canvas>
+            <div class="A1">
+                <div class="div-button">
+                    <button class="button">Hiden camera</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://unpkg.com/kaboom@2000.1.8/dist/kaboom.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
+<script>
+    $(".button").click(function(){
+        if ($(".button").text() == "Hiden camera"){
+            $(".output_canvas").css("display","none")
+            $(".button").text("Open camera") 
+        }   
+        else{
+            $(".output_canvas").css("display","block")
+            $(".button").text("Hiden camera") 
+        }    
+    })
+</script>
